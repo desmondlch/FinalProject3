@@ -1,7 +1,15 @@
 stages:
-  - build
+  - test
 
-build_job:
-  stage: build
+variables:
+  PYTHON_VERSION: "3.8"
+
+before_script:
+  - apt-get update -qy
+  - apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip
+  - pip install flask
+
+test:
+  stage: test
   script:
-    - echo "Build your code here"
+    - python -m app.py
