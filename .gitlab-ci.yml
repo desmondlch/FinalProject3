@@ -1,8 +1,9 @@
 stages:
-  - build
+  - test
 
-build_job:
-  stage: build
+validate_html:
+  stage: test
   script:
-    - echo "Build your code here"
-    - pytest
+    - apt-get update -qy
+    - apt-get install -y tidy
+    - tidy -e index.html second.html
