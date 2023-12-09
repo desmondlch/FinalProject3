@@ -9,7 +9,7 @@ validate_html:
     - apt-get install -y tidy
     - tidy -e index.html second.html
 
-pages:
+deploy_html:
   stage: build
   script:
     - mkdir .public
