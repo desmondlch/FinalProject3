@@ -19,4 +19,5 @@ deploy_html:
       - .public
   only:
     - master  # Adjust the branch as needed
-
+  dependencies:
+    - validate_html
