@@ -1,11 +1,11 @@
-test:
+validate_html:
   stage: test
   script:
     - apt-get update -qy
     - apt-get install -y tidy
     - tidy -e index.html second.html
 
-deploy:
+deploy_html:
   stage: deploy
   script:
     - mkdir .public
@@ -14,7 +14,5 @@ deploy:
     paths:
       - .public
   only:
-    - master
-  dependencies:
-    - test
+    - main
 
