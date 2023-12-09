@@ -2,14 +2,14 @@ stages:
   - test
   - deploy
 
-validate_html:
+test:
   stage: test
   script:
     - apt-get update -qy
     - apt-get install -y tidy
     - tidy -e index.html second.html
 
-deploy_html:
+deploy:
   stage: deploy
   script:
     - mkdir .public
