@@ -20,5 +20,5 @@ deploy:
   only:
     - master
   dependencies:
-    - validate_html
+    - test
 
