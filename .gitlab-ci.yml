@@ -18,6 +18,7 @@ deploy_html:
     paths:
       - .public
   only:
-    - master  # Adjust the branch as needed
+    - master
   dependencies:
     - validate_html
+
