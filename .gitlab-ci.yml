@@ -1,6 +1,6 @@
 stages:
   - test
-  - build
+  - deploy
 
 validate_html:
   stage: test
@@ -10,7 +10,7 @@ validate_html:
     - tidy -e index.html second.html
 
 deploy_html:
-  stage: build
+  stage: deploy
   script:
     - mkdir .public
     - cp -r * .public
