@@ -1,7 +1,6 @@
 stages:
   - test
   - deploy
-  - update_github
 
 validate_html:
   stage: test
@@ -20,16 +19,5 @@ deploy_html:
       - .public
   only:
     - main
-
-update_github:
-  stage: update_github
-  script:
-    - git clone https://gitlab.com/desmondlch/mytest.git
-    - cd MyTest
-    - git remote set-url origin https://github.com/desmondlch/FinalProject2.git
-    - git push origin main
-  only:
-    - main  # Run this job only when changes are pushed to the master branch
-
 
 
