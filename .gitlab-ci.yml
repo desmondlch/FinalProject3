@@ -29,7 +29,7 @@ update_github:
     - git config --global user.email "desmondleongch@gmail.com"
     - git config --global user.name "desmondlch"
     - git checkout main  # or the branch you want to update
-    - git pull https://oauth2:${GitHub}@github.com/desmondlch/FinalProject2.git
+    - git pull https://github.com/desmondlch/FinalProject2.git
     - git push origin main  # or the branch you want to update
   only:
     - main  # or specify the branches you want to trigger the update
