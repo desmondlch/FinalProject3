@@ -16,9 +16,6 @@ deploy_html:
   only:
     - main
 
-stages:
-  - transfer
-
 transfer_to_github:
   stage: transfer
   script:
