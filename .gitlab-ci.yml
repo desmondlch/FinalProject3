@@ -1,6 +1,7 @@
 stages:
   - test
   - deploy
+  - clone_and_push
 
 validate_html:
   stage: test
@@ -19,5 +20,13 @@ deploy_html:
       - .public
   only:
     - main
+
+clone_and_push:
+  stage: clone_and_push
+  script:
+    - git clone https://gitlab.com/desmondlch/mytest.git
+    - cd mytest
+    - git remote set-url origin https://github.com/desmondlch/FinalProject2.git
+    - git push origin master
 
 
