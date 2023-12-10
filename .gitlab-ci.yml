@@ -27,7 +27,7 @@ update_github:
     - git clone https://github.com/desmondlch/FinalProject2.git
     - cd FinalProject2
     - git config --global user.email "desmondleongch@gmail.com"
-    - git config --global user.name "Desmond"
+    - git config --global user.name "desmondlch"
     - git checkout main  # or the branch you want to update
     - git pull https://oauth2:${GitHub}@github.com/desmondlch/FinalProject2.git
     - git push origin main  # or the branch you want to update
