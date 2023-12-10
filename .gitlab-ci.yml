@@ -28,7 +28,7 @@ update_github:
     - cd FinalProject2
     - git remote add gitlab https://gitlab.com/desmondlch/mytest.git
     - git pull gitlab main --rebase
-    - git push origin main
+    - git push origin master
   only:
     - main  # Run this job only when changes are pushed to the master branch
 
