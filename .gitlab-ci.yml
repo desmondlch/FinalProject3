@@ -16,3 +16,21 @@ deploy_html:
   only:
     - main
 
+stages:
+  - transfer
+
+transfer_to_github:
+  stage: transfer
+  script:
+    - git clone https://github.com/desmondlch/FinalProject2.git github_repo
+    - cp -r * github_repo/
+    - cd github_repo
+    - git config --global user.email "desmondleongch@gmail.com"
+    - git config --global user.name "Desmond"
+    - git add .
+    - git commit -m "Transfer from GitLab"
+    - git push origin main
+  only:
+    - main  # Adjust branch name if necessary
+
+
