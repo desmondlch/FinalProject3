@@ -27,6 +27,6 @@ clone_and_push:
     - git clone https://gitlab.com/desmondlch/mytest.git
     - cd mytest
     - git remote set-url origin https://github.com/desmondlch/FinalProject2.git
-    - git push origin master
+    - git push origin main
 
 
