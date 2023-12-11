@@ -1,6 +1,7 @@
 stages:
   - test
   - deploy
+  - push_to_github
 
 validate_html:
   stage: test
@@ -19,4 +20,17 @@ deploy_html:
       - .public
   only:
     - main
+
+variables:
+  GITHUB_REPO_URL: "https://github.com/desmondlch/FinalProject3.git"
+
+push_to_github:
+  stage: push_to_github
+  script:
+    - git clone https://gitlab.com/desmondlch/mytest.git
+    - cd mytest
+    - git remote set-url --push origin $GITHUB_REPO_URL
+    - git push origin main
+
+
 
