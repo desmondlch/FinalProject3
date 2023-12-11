@@ -18,6 +18,8 @@ deploy_html:
   artifacts:
     paths:
       - .public
+  dependencies:
+    - validate_html
   only:
     - main
 
@@ -36,4 +38,6 @@ push_to_github:
     - git config --global user.email "desmondleongch@gmail.com"
     - git config --global user.name "Desmond"
     - git push origin main
+  dependencies:
+    - deploy_html
 
