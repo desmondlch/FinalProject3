@@ -23,14 +23,18 @@ deploy_html:
 
 variables:
   GITHUB_REPO_URL: "https://github.com/desmondlch/FinalProject3.git"
+  GITHUB_TOKEN: $GITHUB_TOKEN  # Set this as a CI/CD variable in your GitLab project settings
 
 push_to_github:
   stage: push_to_github
   script:
     - git clone https://gitlab.com/desmondlch/mytest.git
-    - cd mytest
-    - git remote set-url --push origin $GITHUB_REPO_URL
+    - cd your-gitlab-repo
+    - git remote set-url origin $GITHUB_REPO_URL
+    - git config --global credential.helper store
+    - echo -e "protocol=https\nhost=github.com\nusername=$CI_JOB_TOKEN\npassword=$GITHUB_TOKEN" > ~/.git-credentials
+    - git config --global user.email "desmondleongch@gmail.com"
+    - git config --global user.name "Desmond"
     - git push origin main
-
 
 
