@@ -9,7 +9,7 @@ push_to_github:
   stage: push_to_github
   script:
     - git clone https://gitlab.com/desmondlch/mytest.git
-    - cd your-gitlab-repo
+    - cd mytest
     - git remote set-url origin $GITHUB_REPO_URL
     - git config --global credential.helper store
     - echo -e "protocol=https\nhost=github.com\nusername=$CI_JOB_TOKEN\npassword=$GITHUB_TOKEN" > ~/.git-credentials
