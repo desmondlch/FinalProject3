@@ -8,7 +8,7 @@ validate_html:
   script:
     - apt-get update -qy
     - apt-get install -y tidy
-    - tidy -e index.html second.html
+    - tidy -e *.html
 
 deploy_html:
   stage: deploy
