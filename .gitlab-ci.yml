@@ -12,7 +12,7 @@ push_to_github:
     - cd mytest
     - git remote set-url origin $GITHUB_REPO_URL
     - git config --global credential.helper store
-    - echo -e "protocol=https\nhost=github.com\nusername=$CI_JOB_TOKEN\npassword=$GITHUB_TOKEN" > ~/.git-credentials
+    - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > ~/.git-credentials
     - git config --global user.email "desmondleongch@gmail.com"
     - git config --global user.name "Desmond"
     - git push origin main
