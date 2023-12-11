@@ -40,4 +40,6 @@ push_to_github:
     - git push origin main
   dependencies:
     - deploy_html
+  only:
+    - main
 
