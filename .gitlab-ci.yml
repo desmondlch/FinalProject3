@@ -1,5 +1,25 @@
 stages:
+  - test
+  - deploy
   - push_to_github
+
+validate_html:
+  stage: test
+  script:
+    - apt-get update -qy
+    - apt-get install -y tidy
+    - tidy -e index.html second.html
+
+deploy_html:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r * .public
+  artifacts:
+    paths:
+      - .public
+  only:
+    - main
 
 variables:
   GITHUB_REPO_URL: "https://github.com/desmondlch/FinalProject3.git"
@@ -16,5 +36,4 @@ push_to_github:
     - git config --global user.email "desmondleongch@gmail.com"
     - git config --global user.name "Desmond"
     - git push origin main
-
 
